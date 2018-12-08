@@ -14,9 +14,9 @@ interpreter = RasaNLUInterpreter("models/nlu/default/current")
 agent = Agent.load("models\\dialogue", interpreter= interpreter) # RegexInterpreter())
 
 input_channel = FacebookInput(
-   fb_verify="hello_bot",
-   fb_secret="59dcc45952f56b363997cecc6333b28c",
-   fb_access_token="EAAZAQIuo9HbIBALIt1fSHTKRTfA7ZCrMAMEY2AAVCGu7Y5kS4RICyffR9qU0IUuv1395p5zo0JYdwy3Ol1397ZBBqCrSZB4dZA9cvjo1Cs2sOd1TZAfru9s32MST89ZArJSLNlVQNST70US9gvRHSP3UFm8IE8IXJWAZAtyQfQPaZAgZDZD",
+   fb_verify="FB_SECRET",
+   fb_secret="VERIFY_TOKEN",
+   fb_access_token="PAGE_ACCESS_TOKEN",
    )
 
 # or `agent.handle_channel(...)` for synchronous handling
