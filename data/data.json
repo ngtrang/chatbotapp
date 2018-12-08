@@ -1,0 +1,150 @@
+﻿{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "Hello",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Hi!",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "goodbye",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "Bye",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "Can you tell me the information about this university?",
+        "intent": "request_info",
+        "entities": []
+      },
+      {
+        "text": "thank you",
+        "intent": "thankyou",
+        "entities": []
+      },
+      {
+        "text": "Can you tell me about price of a course?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 22,
+            "end": 27,
+            "value": "price",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "Thank you so much",
+        "intent": "thankyou",
+        "entities": []
+      },
+      {
+        "text": "I want to find some information about this university.",
+        "intent": "request_info",
+        "entities": []
+      },
+      {
+        "text": "How many majors in computer science?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 19,
+            "end": 35,
+            "value": "computer science",
+            "entity": "faculty"
+          }
+        ]
+      },
+      {
+        "text": "What is the price of a bachelor's course in computer science?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 12,
+            "end": 18,
+            "value": "price ",
+            "entity": "price"
+          },
+          {
+            "start": 23,
+            "end": 34,
+            "value": "bachelor's ",
+            "entity": "form"
+          },
+          {
+            "start": 44,
+            "end": 60,
+            "value": "computer science",
+            "entity": "faculty"
+          }
+        ]
+      },
+      {
+        "text": "How long do study for a master's degree?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 24,
+            "end": 32,
+            "value": "master's",
+            "entity": "form"
+          },
+          {
+            "start": 0,
+            "end": 8,
+            "value": "How long",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "Does this university have 1 year masters programs?",
+        "intent": "request_info",
+        "entities": [
+          {
+            "start": 28,
+            "end": 32,
+            "value": "year",
+            "entity": "time"
+          },
+          {
+            "start": 33,
+            "end": 40,
+            "value": "masters",
+            "entity": "form"
+          }
+        ]
+      },
+      {
+        "text": "Good morning",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Thanks",
+        "intent": "thankyou",
+        "entities": []
+      },
+      {
+        "text": "Good evening",
+        "intent": "greet",
+        "entities": []
+      },
+      {
+        "text": "Bye-bye",
+        "intent": "goodbye",
+        "entities": []
+      }
+    ]
+  }
+}

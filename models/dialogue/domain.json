@@ -1,0 +1,29 @@
+{
+  "states": [
+    "intent_greet",
+    "intent_goodbye",
+    "intent_request_info",
+    "intent_price",
+    "intent_thankyou",
+    "entity_price",
+    "entity_form",
+    "entity_faculty",
+    "entity_time",
+    "slot_faculty_0",
+    "slot_form_0",
+    "slot_price_0",
+    "slot_time_0",
+    "prev_action_listen",
+    "prev_action_restart",
+    "prev_utter_greet",
+    "prev_utter_goodbye",
+    "prev_utter_ask_dosearch",
+    "prev_utter_ask_faculties",
+    "prev_utter_ask_specialist",
+    "prev_utter_ask_form",
+    "prev_utter_ask_howcanhelp",
+    "prev_utter_reply_thankyou",
+    "prev_show_price",
+    "prev_info_faculty"
+  ]
+}

@@ -1,0 +1,76 @@
+slots:
+  faculty:
+    type: text
+  price:
+    type: text
+  form:
+    type: text
+  time:
+    type: text
+
+intents:
+  - greet
+  - goodbye
+  - request_info
+  - price
+  - thankyou
+
+entities:
+  - price
+  - form
+  - faculty
+  - time
+
+
+templates:
+  utter_greet:
+  - "Hello!"
+  utter_goodbye:
+  - "Goodbye."
+  - "Bye bye. See you late."
+  utter_ask_dosearch:
+  - "Ok let me see what else there is"
+  utter_ask_specialist:
+  - "Which specialist do you choice?"
+  utter_ask_howcanhelp:
+  - "Hello, How can I help you?"
+  utter_ask_form:
+  - text: "What form of education?"
+    buttons:
+    - title: "bachelor"
+      payload: '/request_info{"form":"bachelor"}' #'/choose{"color": "blue"}'
+    - title: "master"
+      payload: '/request_info{"form":"master"}'
+    - title: "Ph.D"
+      payload: '/request_info{"form":"Ph.D"}'
+  utter_ask_faculties:
+  - text: "Which faculty are you interested in?"
+    buttons:
+    - title: "Economics and Management Faculty"
+      payload: '/request_info{"faculty":"economic"}'
+    - title: "Electronics and Computer Science Faculty"
+      payload: '/request_info{"faculty":"fevt"}'
+    - title: "Faculty of automated, vehicle and weapon systems"
+      payload: '/request_info{"faculty":"toa"}'
+#    - title: "Automobile Transport Faculty"
+#      payload: "at"
+#    - title: "Chemical Engineering Faculty"
+#      payload: "chemical"
+#    - title: "Food Engineering Faculty"
+#      payload: "food"
+#    - title: "Structural Materials Technology Faculty"
+#      payload: "material"
+  utter_reply_thankyou:
+  - "You're welcome."
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_dosearch
+  - utter_ask_faculties
+  - utter_ask_specialist
+  - utter_ask_form
+  - utter_ask_howcanhelp
+  - utter_reply_thankyou
+  - actions.ActionPrice
+  - actions.ActionInfoFaculty

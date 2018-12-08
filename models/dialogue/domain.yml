@@ -1,0 +1,82 @@
+action_factory: null
+action_names:
+- utter_greet
+- utter_goodbye
+- utter_ask_dosearch
+- utter_ask_faculties
+- utter_ask_specialist
+- utter_ask_form
+- utter_ask_howcanhelp
+- utter_reply_thankyou
+- show_price
+- info_faculty
+actions:
+- utter_greet
+- utter_goodbye
+- utter_ask_dosearch
+- utter_ask_faculties
+- utter_ask_specialist
+- utter_ask_form
+- utter_ask_howcanhelp
+- utter_reply_thankyou
+- actions.ActionPrice
+- actions.ActionInfoFaculty
+config:
+  store_entities_as_slots: true
+entities:
+- price
+- form
+- faculty
+- time
+intents:
+- greet
+- goodbye
+- request_info
+- price
+- thankyou
+slots:
+  faculty:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  form:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  price:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  time:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_ask_dosearch:
+  - text: Ok let me see what else there is
+  utter_ask_faculties:
+  - buttons:
+    - payload: /request_info{"faculty":"economic"}
+      title: Economics and Management Faculty
+    - payload: /request_info{"faculty":"fevt"}
+      title: Electronics and Computer Science Faculty
+    - payload: /request_info{"faculty":"toa"}
+      title: Faculty of automated, vehicle and weapon systems
+    text: Which faculty are you interested in?
+  utter_ask_form:
+  - buttons:
+    - payload: /request_info{"form":"bachelor"}
+      title: bachelor
+    - payload: /request_info{"form":"master"}
+      title: master
+    - payload: /request_info{"form":"Ph.D"}
+      title: Ph.D
+    text: What form of education?
+  utter_ask_howcanhelp:
+  - text: Hello, How can I help you?
+  utter_ask_specialist:
+  - text: Which specialist do you choice?
+  utter_goodbye:
+  - text: Goodbye.
+  - text: Bye bye. See you late.
+  utter_greet:
+  - text: Hello!
+  utter_reply_thankyou:
+  - text: You're welcome.
+topics: []
