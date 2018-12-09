@@ -7,20 +7,16 @@ import os
 #from rasa_core.utils import EndpointConfig
 from rasa_core.interpreter import RegexInterpreter
 
-# load your trained agent
-#nlu_interpreter = RasaNLUInterpreter('./models/nlu/default/current')
-#action_endpoint = EndpointConfig(url="https://8a5fd609.ngrok.io")
-#agent = Agent.load('./models/dialogue', interpreter = nlu_interpreter, action_endpoint = action_endpoint)
-interpreter = RasaNLUInterpreter("models/nlu/default/current")
-agent = Agent.load("models\\dialogue", interpreter= interpreter) # RegexInterpreter())
+if __name__ == '__main__':
+   interpreter = RasaNLUInterpreter("models/nlu/default/current")
+   agent = Agent.load("models\\dialogue", interpreter= interpreter) # RegexInterpreter())
 
-input_channel = FacebookInput(
-   fb_verify= os.environ["FB_SECRET"],
-   fb_secret=os.environ["VERIFY_TOKEN"],
-   fb_access_token=os.environ["PAGE_ACCESS_TOKEN"],
-   )
+   input_channel = FacebookInput(
+      fb_verify= os.environ["FB_SECRET"],
+      fb_secret=os.environ["VERIFY_TOKEN"],
+      fb_access_token=os.environ["PAGE_ACCESS_TOKEN"],
+      )
 
-# or `agent.handle_channel(...)` for synchronous handling
-agent.handle_channel(HttpInputChannel(5004, "/app", input_channel))
+   # or `agent.handle_channel(...)` for synchronous handling
+   agent.handle_channel(HttpInputChannel(5004, "/app", input_channel))
 
-#agent.handle_channel([input_channel])
