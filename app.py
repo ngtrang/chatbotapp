@@ -1,7 +1,6 @@
 import os
 import sys
 import json
-import chatbot_rus
 from datetime import datetime
 
 import requests
