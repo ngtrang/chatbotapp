@@ -3,6 +3,7 @@ from rasa_core.channels.facebook import FacebookInput
 from rasa_core.agent import Agent
 from rasa_core.interpreter import RasaNLUInterpreter
 import yaml
+import os
 #from rasa_core.utils import EndpointConfig
 from rasa_core.interpreter import RegexInterpreter
 
@@ -14,9 +15,9 @@ interpreter = RasaNLUInterpreter("models/nlu/default/current")
 agent = Agent.load("models\\dialogue", interpreter= interpreter) # RegexInterpreter())
 
 input_channel = FacebookInput(
-   fb_verify="FB_SECRET",
-   fb_secret="VERIFY_TOKEN",
-   fb_access_token="PAGE_ACCESS_TOKEN",
+   fb_verify= os.environ["FB_SECRET"],
+   fb_secret=os.environ["VERIFY_TOKEN"],
+   fb_access_token=os.environ["PAGE_ACCESS_TOKEN"],
    )
 
 # or `agent.handle_channel(...)` for synchronous handling
