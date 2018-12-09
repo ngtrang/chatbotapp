@@ -12,8 +12,8 @@ if __name__ == '__main__':
    agent = Agent.load("models\\dialogue", interpreter= interpreter) # RegexInterpreter())
 
    input_channel = FacebookInput(
-      fb_verify= os.environ["FB_SECRET"],
-      fb_secret=os.environ["VERIFY_TOKEN"],
+      fb_verify= os.environ["VERIFY_TOKEN"],
+      fb_secret=os.environ["FB_SECRET],
       fb_access_token=os.environ["PAGE_ACCESS_TOKEN"],
       )
 
