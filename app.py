@@ -2,11 +2,7 @@ import os
 import sys
 import json
 from datetime import datetime
-from rasa_core.channels import HttpInputChannel
-from rasa_core.channels.facebook import FacebookInput
-from rasa_core.agent import Agent
-from rasa_core.interpreter import RasaNLUInterpreter
-import yaml
+
 
 import requests
 from flask import Flask, request
@@ -45,7 +41,10 @@ def webhook():
                     recipient_id = messaging_event["recipient"]["id"]  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event["message"]["text"]  # the message's text
                     #answer = chatbot_rus.chattoBot(message_text)
-                    
+                    from rasa_core.channels import HttpInputChannel
+                    from rasa_core.channels.facebook import FacebookInput
+                    from rasa_core.agent import Agent
+                    from rasa_core.interpreter import RasaNLUInterpreter
                     interpreter = RasaNLUInterpreter("models/nlu/default/current")
                     agent = Agent.load("models/dialogue", interpreter=interpreter) 
                     send_message(sender_id, agent.handle_channel(message_text))
