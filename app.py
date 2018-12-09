@@ -18,5 +18,5 @@ if __name__ == '__main__':
       )
 
    # or `agent.handle_channel(...)` for synchronous handling
-   agent.handle_channel(HttpInputChannel(5004, "/app", input_channel))
+   agent.handle_channel(HttpInputChannel( "/app", input_channel))
 
