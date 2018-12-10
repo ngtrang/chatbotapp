@@ -17,6 +17,6 @@ input_channel = FacebookInput(
         fb_verify= os.eviron["VERIFY_TOKEN"],
         fb_secret = os.eviron["FB_SECRET"],
         fb_access_token = os.eviron["PAGE_ACCESS_TOKEN"])
-agent.handle_channel(HttpInputChannel(5004, "/app", input_channel))
+agent.handle_channel(HttpInputChannel(input_channel))
 
 
