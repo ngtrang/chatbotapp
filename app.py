@@ -9,19 +9,14 @@ import os
 #from rasa_core.utils import EndpointConfig
 from rasa_core.interpreter import RegexInterpreter
 
-app = Flask(__name__)
 
-@app.route('/')
-def homepage():
-    interpreter = RasaNLUInterpreter("models/nlu/default/current")
-    agent = Agent.load("models\\dialogue", interpreter= interpreter) # RegexInterpreter())
+interpreter = RasaNLUInterpreter("models/nlu/default/current")
+agent = Agent.load("models\\dialogue", interpreter= interpreter) # RegexInterpreter())
 
-    input_channel = FacebookInput(
+input_channel = FacebookInput(
         fb_verify= os.eviron["VERIFY_TOKEN"],
         fb_secret = os.eviron["FB_SECRET"],
         fb_access_token = os.eviron["PAGE_ACCESS_TOKEN"])
-    agent.handle_channel(HttpInputChannel(input_channel))
+agent.handle_channel(HttpInputChannel(input_channel))
 
 
-if __name__ == '__main__':
-    app.run(debug=True, use_reloader=True)
